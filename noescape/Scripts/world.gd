@@ -13,7 +13,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	
-	if Input.is_action_just_pressed("fire"): 
+	if Input.is_action_pressed("fire"): 
 		# collegamento alla ""classe"" del proiettile
 		const PROIETTILE = preload("res://Scenes/knife_bullet.tscn")
 		# istanzio il proiettile
