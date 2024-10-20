@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://b27s3yahj0acb"]
+
+[ext_resource type="Script" path="res://Scripts/green_slime.gd" id="1_cd78s"]
+[ext_resource type="Texture2D" uid="uid://bs30hjfyll4bs" path="res://Assets/Slime2.png" id="1_qxhnv"]
+[ext_resource type="Script" path="res://Scripts/HurtBox.gd" id="2_2ta4w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gpmph"]
+radius = 8.06226
+
+[node name="GreenSlime" type="CharacterBody2D"]
+script = ExtResource("1_cd78s")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qxhnv")
+hframes = 4
+vframes = 4
+
+[node name="Hurtbox" type="Area2D" parent="Sprite2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("2_2ta4w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Hurtbox"]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_gpmph")
+
+[connection signal="area_entered" from="Sprite2D/Hurtbox" to="Sprite2D/Hurtbox" method="_on_area_entered"]
