@@ -13,5 +13,5 @@ func _process(delta: float) -> void:
 
 
 func levelUp(levelToAdd):
-	worldLevel += levelToAdd
+	worldLevel = levelToAdd
 	set_text(str(worldLevel))

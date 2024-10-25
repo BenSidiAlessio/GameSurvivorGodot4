@@ -1,11 +1,11 @@
 extends ProgressBar
 
 @onready var worldLevel = %WorldLevel
-
+var level : int = 1
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	max_value = 10*level
+	value = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -14,6 +14,10 @@ func _process(delta: float) -> void:
 
 func riseLevel(expPoint):
 	value += expPoint
+	print(value)
 	if value == max_value:
-		value = 0
-		worldLevel.levelUp(1)
+		value = value-max_value
+		level += 1
+		max_value = 10*level
+		print(max_value)
+		worldLevel.levelUp(level)
