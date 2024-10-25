@@ -9,8 +9,6 @@ func _ready() -> void:
 	spawn_mob()
 	spawn_mob()
 	
-	
-
 func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_pressed("fire"): 
