@@ -2,12 +2,16 @@ extends Node2D
 
 @onready var weapon = $Knife
 @onready var TimeMobSpawner = %TimeMobSpawner
+@onready var enemy = %Enemy
+#@export var enemy : Enemy
+var worldLevel : int
 
 func _ready() -> void:
-	spawn_mob()
-	spawn_mob()
-	spawn_mob()
-	spawn_mob()
+	worldLevel = 1
+	enemy.spawn_mob(worldLevel)
+	enemy.spawn_mob(worldLevel)
+	enemy.spawn_mob(worldLevel)
+	enemy.spawn_mob(worldLevel)
 	
 func _physics_process(delta: float) -> void:
 	
@@ -24,11 +28,5 @@ func _physics_process(delta: float) -> void:
 		get_tree().root.add_child(proiettile)
 
 	if TimeMobSpawner.is_stopped():
-		spawn_mob()
+		enemy.spawn_mob(worldLevel)
 		TimeMobSpawner.start()
-
-func spawn_mob():
-	var mob = preload("res://Scenes/GreenSlime.tscn").instantiate()
-	%SpawnerPosition.progress_ratio = randf()
-	mob.global_position = %SpawnerPosition.global_position
-	add_child(mob)

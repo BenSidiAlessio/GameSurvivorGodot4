@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Enemy" load_steps=3 format=3 uid="uid://dlnackcurxav1"]
+
+[ext_resource type="Script" path="res://Data/Enemy.gd" id="1_dxamc"]
+[ext_resource type="PackedScene" uid="uid://b27s3yahj0acb" path="res://Scenes/GreenSlime.tscn" id="1_vg3c4"]
+
+[resource]
+script = ExtResource("1_dxamc")
+name = "green_slime"
+scene = ExtResource("1_vg3c4")

@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://cq32stqenpg6s"]
+[gd_scene load_steps=9 format=3 uid="uid://cq32stqenpg6s"]
 
 [ext_resource type="Script" path="res://Scripts/world.gd" id="1_ofud4"]
 [ext_resource type="PackedScene" uid="uid://dox37krwnhpdr" path="res://Scenes/Knife.tscn" id="1_yhkc1"]
 [ext_resource type="Script" path="res://Scripts/time_mob_spawner.gd" id="2_lcjuh"]
-[ext_resource type="Resource" uid="uid://dlnackcurxav1" path="res://Data/GreenSlime.tres" id="2_ng75f"]
 [ext_resource type="Script" path="res://Scripts/world_level_bar.gd" id="4_pfr82"]
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="5_851ko"]
 [ext_resource type="Script" path="res://Scripts/world_level.gd" id="5_tufga"]
@@ -59,7 +58,6 @@ script = ExtResource("5_tufga")
 [node name="Enemy" type="Node2D" parent="."]
 unique_name_in_owner = true
 script = ExtResource("5_851ko")
-enemy = ExtResource("2_ng75f")
 
 [node name="TimeMobSpawner" type="Timer" parent="Enemy"]
 unique_name_in_owner = true
