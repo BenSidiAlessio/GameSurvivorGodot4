@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfm3fcwfsakve"]
+
+[ext_resource type="Texture2D" uid="uid://bfa0aov5bqv23" path="res://Assets/YellowTRex.png" id="1_wnxm5"]
+[ext_resource type="Script" path="res://Scripts/HurtBox.gd" id="2_5fnqg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_66ca5"]
+size = Vector2(11, 9)
+
+[node name="YellowTRex" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wnxm5")
+region_enabled = true
+region_rect = Rect2(0.0999832, 0, 15.8471, 16.1878)
+
+[node name="Hurtbox" type="Area2D" parent="Sprite2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("2_5fnqg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Hurtbox"]
+position = Vector2(-0.5, 3.5)
+shape = SubResource("RectangleShape2D_66ca5")
+
+[connection signal="area_entered" from="Sprite2D/Hurtbox" to="Sprite2D/Hurtbox" method="_on_area_entered"]

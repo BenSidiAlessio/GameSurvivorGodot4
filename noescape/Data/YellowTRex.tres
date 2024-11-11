@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Enemy" load_steps=3 format=3 uid="uid://cfopgucyrswc8"]
+
+[ext_resource type="PackedScene" uid="uid://cfm3fcwfsakve" path="res://Scenes/YellowTRex.tscn" id="1_8bjun"]
+[ext_resource type="Script" path="res://Data/Enemy.gd" id="2_v1615"]
+
+[resource]
+script = ExtResource("2_v1615")
+name = "yellow_trex"
+scene = ExtResource("1_8bjun")

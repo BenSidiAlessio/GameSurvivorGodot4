@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cq32stqenpg6s"]
+[gd_scene load_steps=11 format=3 uid="uid://cq32stqenpg6s"]
 
 [ext_resource type="Script" path="res://Scripts/world.gd" id="1_ofud4"]
 [ext_resource type="PackedScene" uid="uid://dox37krwnhpdr" path="res://Scenes/Knife.tscn" id="1_yhkc1"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Scripts/world_level_bar.gd" id="4_pfr82"]
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="5_851ko"]
 [ext_resource type="Script" path="res://Scripts/world_level.gd" id="5_tufga"]
+[ext_resource type="Resource" uid="uid://cfopgucyrswc8" path="res://Data/YellowTRex.tres" id="7_0n5p2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_f2xvv"]
 
@@ -56,10 +57,14 @@ text = "1"
 label_settings = SubResource("LabelSettings_f2xvv")
 script = ExtResource("5_tufga")
 
-[node name="Enemy" type="Node2D" parent="."]
+[node name="Enemy" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("5_851ko")
 enemy = ExtResource("2_ng75f")
+enemies = {
+"green_slime": ExtResource("2_ng75f"),
+"yellow_trex": ExtResource("7_0n5p2")
+}
 
 [node name="TimeMobSpawner" type="Timer" parent="Enemy"]
 unique_name_in_owner = true
@@ -76,6 +81,6 @@ position = Vector2(-310, -180)
 rotation = -1.5708
 progress = 1960.0
 
-[node name="Hero" type="Node2D" parent="."]
+[node name="Hero" type="Node" parent="."]
 
-[node name="UI" type="Node2D" parent="."]
+[node name="UI" type="Node" parent="."]
